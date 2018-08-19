@@ -1,0 +1,11 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^data-raw$
+^devtools_history\.R$
+devtstuff_history.R
+^devtstuff_history\.R$
+^devstuff_history\.R$
+^dev$
+^LICENSE\.md$
+^README\.Rmd$
+^CODE_OF_CONDUCT\.md$

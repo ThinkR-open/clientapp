@@ -1,0 +1,33 @@
+Package: clientapp
+Title: A Shiny template for client database exploration
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Sebastien", "Rochette", email = "sebastien@thinkr.fr", role = c("aut", "cre"))
+  )
+Description: A Shiny template for client database exploration.
+License: MIT + file LICENSE
+Imports: 
+    dplyr,
+    DT,
+    ggplot2,
+    glue,
+    graphics,
+    leaflet,
+    magrittr,
+    plotly,
+    shiny,
+    shinydashboard,
+    stats,
+    utils,
+    viridis
+Suggests: 
+    knitr,
+    rmarkdown,
+    sf,
+    testthat,
+    tmap
+VignetteBuilder: knitr
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.0

@@ -1,0 +1,111 @@
+---
+title: "Vignette Title"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(dplyr)
+library(ggplot2)
+library(sf)
+library(leaflet)
+library(tmap)
+library(clientapp)
+```
+
+# Read internal data
+```{r}
+# devtools::load_all()
+data("database", package = "clientapp")
+data("fra_sf", package = "clientapp")
+```
+
+# Show clients database
+```{r}
+DT::datatable(database$clients)
+```
+
+# Show tickets database
+```{r}
+DT::datatable(database$tickets)
+```
+
+# Distribution by entry_year
+```{r}
+pr_level <- c("Bronze", "Silver", "Gold", "Platinium")
+colpal <- c("#965A38", "#A8A8A8", "#D9A441", "#3B3B1D")
+names(colpal) <- pr_level
+
+g <- database$clients %>% 
+  mutate(priorite = factor(priorite, levels = rev(pr_level))) %>% 
+  count(entry_year, priorite) %>% 
+ggplot() +
+  geom_bar(aes(x = entry_year, y = n, fill = priorite),
+           stat = "identity") +
+  scale_fill_manual(values = colpal) +
+  theme_bw()
+
+plotly::ggplotly(g)
+```
+
+# Fidelity
+```{r}
+ggplot(database$clients) +
+  aes(age_class, point_fidelite) +
+  geom_violin(aes(fill = age_class), 
+              draw_quantiles = 0.5, scale = "count",
+              alpha = 0.5, colour = "grey20") +
+  # geom_violin(aes(colour = age_class),
+  #             draw_quantiles = 0.5, scale = "count",
+  #             alpha = 1, fill = NA) +
+  # geom_dotplot(binaxis = "y", stackdir = "centerwhole",
+  #              binwidth = 60,
+  #              color = "grey20",
+  #              alpha = 0.7,
+  #              dotsize = 1) +
+  # scale_y_log10() +
+  scale_fill_viridis_d(guide = FALSE) +
+  # scale_color_viridis_d(guide = FALSE) +
+  xlab("Age class") +
+  ylab("Points of fidelity")
+```
+
+
+# Number of client by department
+```{r}
+all_by_dpt <- fra_sf %>% #, "All", "All")
+  left_join(client_by_dpt(database$clients),
+            by = c("region", "id_dpt"))
+
+my_pal <- colorNumeric(viridis::viridis(n = 30, direction = -1), domain = all_by_dpt$n)
+my_pal_rev <- colorNumeric(viridis::viridis(n = 30, direction = 1), domain = all_by_dpt$n)
+
+leaflet(all_by_dpt) %>% 
+  addTiles() %>% 
+  addPolygons(fillColor = ~my_pal(n), fillOpacity = 0.75,
+              color = "#474747", weight = 1,
+              label = paste0(
+                all_by_dpt$departement, " (",
+                ifelse(is.na(all_by_dpt$n),
+                       0,all_by_dpt$n), ")")
+  ) %>% 
+      addLegend(position = "topright", pal = my_pal_rev,
+                title = "Nb of clients",
+                values = ~n, bins = 4,
+                opacity = 0.75, na.label = "0",
+                labFormat = labelFormat(
+                transform = function(x) rev(x))
+      )
+  
+
+```
+
