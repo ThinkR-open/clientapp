@@ -6,10 +6,12 @@
 \title{Map of France}
 \format{A data frame with 96 rows, 5 variables and a spatial geometry (MULTIPOLYGON):
 \describe{
+\item{OBJECTID}{ID of the feature}
 \item{pays}{country: France}
 \item{region}{region name}
 \item{departement}{departement name}
 \item{id_dpt}{departement id}
+\item{geometry}{Simple feature geometry}
 }}
 \source{
 \url{GADM}

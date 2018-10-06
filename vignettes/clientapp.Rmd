@@ -1,10 +1,10 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "Exploration of client database"
+author: "ThinkR"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Exploration of client database}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -21,6 +21,9 @@ library(leaflet)
 library(tmap)
 library(clientapp)
 ```
+
+# Presentation
+Functions that are used on the "client" page
 
 # Read internal data
 ```{r}

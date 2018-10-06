@@ -57,6 +57,7 @@ usethis::use_tidy_description()
 
 # Vignette
 usethis::use_vignette("clientapp")
+usethis::use_vignette("callsapp")
 # devtools::build_vignettes()
 #
 # # Codecov

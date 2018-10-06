@@ -6,6 +6,7 @@ Authors@R: c(
   )
 Description: A Shiny template for client database exploration.
 License: MIT + file LICENSE
+Depends: R (>= 2.10)
 Imports: 
     dplyr,
     DT,
@@ -15,6 +16,7 @@ Imports:
     leaflet,
     magrittr,
     plotly,
+    sf,
     shiny,
     shinydashboard,
     stats,
@@ -23,7 +25,6 @@ Imports:
 Suggests: 
     knitr,
     rmarkdown,
-    sf,
     testthat,
     tmap
 VignetteBuilder: knitr

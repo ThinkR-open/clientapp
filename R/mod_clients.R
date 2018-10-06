@@ -60,8 +60,12 @@ mod_clientsUI <- function(id) {
 #' @importFrom plotly ggplotly renderPlotly
 #' @importFrom DT datatable renderDT
 #' @importFrom leaflet leaflet renderLeaflet colorNumeric addTiles addPolygons addLegend labelFormat
+#' @importFrom sf st_sf
 mod_clients <- function(input, output, session, r) {
   ns <- session$ns
+
+  database <- clientapp::database
+  fra_sf <- clientapp::fra_sf
 
   output$base_client <- renderDT({
     datatable(database$clients,
@@ -113,6 +117,7 @@ mod_clients <- function(input, output, session, r) {
 
   output$client_dept <- renderLeaflet({
     all_by_dpt <- fra_sf %>%
+      st_sf() %>%
       left_join(client_by_dpt(database$clients, priorite = input$priorite, age_class = input$age_class),
                 by = c("region", "id_dpt"))
 

@@ -1,0 +1,27 @@
+---
+title: "Vignette Title"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Presentation
+Functions that are used on the "calls" page
+
+# Read internal data
+```{r}
+# devtools::load_all()
+data("database", package = "clientapp")
+data("fra_sf", package = "clientapp")
+```
