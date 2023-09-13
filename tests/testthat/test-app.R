@@ -2,7 +2,7 @@ context("Application")
 library(shiny)
 test_that("app ui", {
   ui <- clientapp:::app_ui()
-  expect_is(ui, "shiny.tag")
+  expect_is(ui, "shiny.tag.list")
 })
 
 # need to be updated to work with ShinyModule... PR welcome

@@ -1,16 +1,16 @@
 #' Customer by departement
 #'
 #' @param x database
-#' @param priorite priorite
+#' @param priority priority
 #' @param age_class age_class
 #'
 #' @importFrom dplyr filter count arrange desc
 #'
 #' @export
-client_by_dpt <- function(x, priorite, age_class) {
-  if (!missing(priorite) && priorite != "All") {
+client_by_dpt <- function(x, priority, age_class) {
+  if (!missing(priority) && priority != "All") {
     x <- x %>%
-      filter(priorite == !!priorite)
+      filter(priority == !!priority)
   }
   if (!missing(age_class) && age_class != "All") {
     x <- x %>%

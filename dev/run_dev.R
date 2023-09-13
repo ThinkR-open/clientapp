@@ -1,12 +1,25 @@
-# This script allow you to quick clean your R session
-# update documentation and NAMESPACE, localy install the package
-# and run the main shinyapp from 'inst/app'
-.rs.api.documentSaveAll() # close and save all open file
-try(suppressWarnings(lapply(paste("package:", names(sessionInfo()$otherPkgs), sep = ""),
-                            detach, character.only = TRUE, unload = TRUE)), silent = TRUE)
-rm(list=ls(all.names = TRUE))
-devtools::document('.')
-devtools::load_all('.')
+# .rs.api.documentSaveAll() # close and save all open file
+# devtools::document(".")
+attachment::att_to_description()
+# devtools::install(".", upgrade = "never", quick = TRUE)
+#
+# options(shiny.launch.browser = TRUE); options(app.prod = TRUE); shiny::runApp(system.file("app", package = "bloomsubventions"))
+# #
+# # cmd <- 'options(shiny.launch.browser = TRUE); options(app.prod = TRUE); shiny::runApp(system.file("app", package = "syntime"))'
+#
+# rstudioapi::terminalExecute(
+#   glue::glue("R -e '{cmd}'")
+# )
 
-options(app.prod=FALSE) # TRUE = production mode, FALSE = development mode
-shiny::runApp('inst/app')
+# Set options here
+options(golem.app.prod = FALSE) # TRUE = production mode, FALSE = development mode
+
+# Detach all loaded packages and clean your environment
+golem::detach_all_attached()
+rm(list = ls(all.names = TRUE))
+
+# Document and reload your package
+golem::document_and_reload()
+
+# Run the application
+run_app()

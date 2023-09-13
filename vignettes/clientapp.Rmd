@@ -1,10 +1,10 @@
 ---
 title: "Exploration of client database"
-author: "ThinkR"
+author: "Sébastien Rochette"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Exploration of client database}
+  %\VignetteIndexEntry{01 - Exploration of client database}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -22,37 +22,34 @@ library(tmap)
 library(clientapp)
 ```
 
-# Presentation
-Functions that are used on the "client" page
-
-# Read internal data
+## Read internal data
 ```{r}
 # devtools::load_all()
 data("database", package = "clientapp")
 data("fra_sf", package = "clientapp")
 ```
 
-# Show clients database
+## Show clients database
 ```{r}
 DT::datatable(database$clients)
 ```
 
-# Show tickets database
+## Show tickets database
 ```{r}
 DT::datatable(database$tickets)
 ```
 
-# Distribution by entry_year
+## Distribution by entry_year
 ```{r}
 pr_level <- c("Bronze", "Silver", "Gold", "Platinium")
 colpal <- c("#965A38", "#A8A8A8", "#D9A441", "#3B3B1D")
 names(colpal) <- pr_level
 
 g <- database$clients %>% 
-  mutate(priorite = factor(priorite, levels = rev(pr_level))) %>% 
-  count(entry_year, priorite) %>% 
+  mutate(priority = factor(priority, levels = rev(pr_level))) %>% 
+  count(entry_year, priority) %>% 
 ggplot() +
-  geom_bar(aes(x = entry_year, y = n, fill = priorite),
+  geom_bar(aes(x = entry_year, y = n, fill = priority),
            stat = "identity") +
   scale_fill_manual(values = colpal) +
   theme_bw()
@@ -60,10 +57,10 @@ ggplot() +
 plotly::ggplotly(g)
 ```
 
-# Fidelity
+## Fidelity
 ```{r}
 ggplot(database$clients) +
-  aes(age_class, point_fidelite) +
+  aes(age_class, fidelity_points) +
   geom_violin(aes(fill = age_class), 
               draw_quantiles = 0.5, scale = "count",
               alpha = 0.5, colour = "grey20") +
@@ -83,7 +80,7 @@ ggplot(database$clients) +
 ```
 
 
-# Number of client by department
+## Number of client by department
 ```{r}
 all_by_dpt <- fra_sf %>% #, "All", "All")
   left_join(client_by_dpt(database$clients),

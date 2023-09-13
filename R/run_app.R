@@ -13,5 +13,6 @@
 #' }
 #'
 run_app <- function() {
+  addResourcePath("resources", system.file("resources", package = "clientapp"))
   shinyApp(ui = app_ui(), server = app_server)
 }

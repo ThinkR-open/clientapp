@@ -39,8 +39,8 @@ mod_clientsUI <- function(id) {
       status = "primary",
       column(
         width = 3,
-        selectInput(ns("priorite"), label = "Priority",
-                    choices = c("All", levels(pull(database$clients, priorite)))
+        selectInput(ns("priority"), label = "Priority",
+                    choices = c("All", levels(pull(database$clients, priority)))
         ),
         selectInput(ns("age_class"), label = "Age class",
                     choices = c("All",
@@ -60,28 +60,27 @@ mod_clientsUI <- function(id) {
 #' @importFrom plotly ggplotly renderPlotly
 #' @importFrom DT datatable renderDT
 #' @importFrom leaflet leaflet renderLeaflet colorNumeric addTiles addPolygons addLegend labelFormat
-#' @importFrom sf st_sf
+#' @importFrom sf st_as_sf
 mod_clients <- function(input, output, session, r) {
   ns <- session$ns
 
-  database <- clientapp::database
-  fra_sf <- clientapp::fra_sf
-
   output$base_client <- renderDT({
+    message(ns("output$base_client"))
     datatable(database$clients,
               options = list(scrollX = TRUE))
   })
 
   output$entry_level <- renderPlotly({
+    message(ns("output$entry_level"))
     pr_level <- c("Bronze", "Silver", "Gold", "Platinium")
     colpal <- c("#965A38", "#A8A8A8", "#D9A441", "#3B3B1D")
     names(colpal) <- pr_level
 
     g <- database$clients %>%
-      mutate(priorite = factor(priorite, levels = rev(pr_level))) %>%
-      count(entry_year, priorite) %>%
+      mutate(priority = factor(priority, levels = rev(pr_level))) %>%
+      count(entry_year, priority) %>%
       ggplot() +
-      geom_bar(aes(x = entry_year, y = n, fill = priorite),
+      geom_bar(aes(x = entry_year, y = n, fill = priority),
                stat = "identity") +
       scale_fill_manual(values = colpal) +
       xlab("Entry year") +
@@ -92,8 +91,9 @@ mod_clients <- function(input, output, session, r) {
   })
 
   output$fidelity <- renderPlotly({
+    message(ns("output$fidelity"))
     g <- ggplot(database$clients) +
-      aes(age_class, point_fidelite) +
+      aes(age_class, fidelity_points) +
       geom_violin(aes(fill = age_class),
                   draw_quantiles = 0.5, scale = "count",
                   alpha = 0.75, colour = "black") +
@@ -116,10 +116,11 @@ mod_clients <- function(input, output, session, r) {
   })
 
   output$client_dept <- renderLeaflet({
+    message(ns("output$client_dept"))
     all_by_dpt <- fra_sf %>%
-      st_sf() %>%
-      left_join(client_by_dpt(database$clients, priorite = input$priorite, age_class = input$age_class),
-                by = c("region", "id_dpt"))
+      left_join(client_by_dpt(database$clients, priority = input$priority, age_class = input$age_class),
+                by = c("region", "id_dpt")) %>%
+      st_as_sf()
 
     my_pal <- colorNumeric(viridis::viridis(n = 30, direction = -1), domain = all_by_dpt$n)
     my_pal_rev <- colorNumeric(viridis::viridis(n = 30, direction = 1), domain = all_by_dpt$n)

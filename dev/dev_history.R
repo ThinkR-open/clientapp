@@ -10,6 +10,7 @@
 # Hide this file from build
 usethis::use_build_ignore("devstuff_history.R")
 usethis::use_build_ignore("dev")
+usethis::use_build_ignore("app.R")
 
 # DESCRIPTION
 
@@ -31,6 +32,10 @@ my_desc$del("URL")
 my_desc$del("BugReports")
 my_desc$write(file = "DESCRIPTION")
 
+# Modules ----
+golem::add_module("tickets")
+
+
 # Packages ----
 usethis::use_roxygen_md()
 usethis::use_pipe()
@@ -49,7 +54,7 @@ usethis::use_testthat()
 usethis::use_test("app")
 
 # Dependencies
-attachment::att_to_description()
+attachment::att_amend_desc()
 
 # Reorder your DESC
 
@@ -57,7 +62,7 @@ usethis::use_tidy_description()
 
 # Vignette
 usethis::use_vignette("clientapp")
-usethis::use_vignette("callsapp")
+usethis::use_vignette("tickets")
 # devtools::build_vignettes()
 #
 # # Codecov
@@ -70,5 +75,13 @@ usethis::use_vignette("callsapp")
 #
 # Gitlab
 
+# CI
+usethis::use_github_action("check-release")
+usethis::use_github_action("pkgdown")
+
+# Deploy
+usethis::use_git_ignore("rsconnect")
+
 # Dev
 devtools::load_all()
+devtools::check()

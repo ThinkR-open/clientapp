@@ -13,3 +13,8 @@
 #' }
 #' @source \url{GADM}
 "fra_sf"
+
+#' Dataset
+#' @format A data frame for calls received
+#'
+"database"

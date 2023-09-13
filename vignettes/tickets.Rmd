@@ -1,0 +1,51 @@
+---
+title: "Exploration of tickets database"
+author: "Sébastien Rochette"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{02 - Exploration of tickets database}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(dplyr)
+library(ggplot2)
+library(sf)
+library(leaflet)
+library(tmap)
+library(clientapp)
+```
+
+## Read internal data
+```{r}
+# devtools::load_all()
+data("database", package = "clientapp")
+data("fra_sf", package = "clientapp")
+```
+
+
+## Join tables
+Join client and tickets tables
+```{r}
+ticket_complete <- database$tickets %>% 
+  left_join(database$clients, by = "num_client")
+```
+
+## Explore data
+```{r}
+ticket_complete %>% 
+  mutate(state_reduce = case_when(
+    grepl("Attente", state) ~ "Awaiting",
+    state == "Terminé" ~ "Done",
+    TRUE ~ "Proceeding"  
+    )) %>% 
+  count(state_reduce)
+```
+

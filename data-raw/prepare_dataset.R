@@ -1,16 +1,20 @@
 # Create fake dataset using internal ThinkR package
 library(dplyr)
-library(fakethis)
-database <- fausse_base_ticket_client(vol = 1500, n = 500, seed = 4321, split = TRUE)
+library(fakir)
+database <- fake_ticket_client(vol = 1500, n = 500, seed = 4321, split = TRUE)
 
-database$clients <- database$clients %>%
+clients <- database$clients %>%
+  arrange(id_dpt, departement) %>%
   tidyr::fill(departement) %>%
   mutate(
     entry_year = lubridate::year(entry_date),
     age_class = cut(age, breaks = c(18, 25, 40, 55, 70, 100),
                     include.lowest = TRUE))
 
-usethis::use_data(database, overwrite = TRUE)
+usethis::use_data(clients, overwrite = TRUE)
+
+tickets <- database$tickets %>%
+  left_join(database$clients, by = "num_client")
 
 # Map of France
 fra_sf <- raster::getData('GADM', country = 'FRA', level = 2, path = "data-raw") %>%

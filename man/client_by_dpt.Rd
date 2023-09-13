@@ -4,12 +4,12 @@
 \alias{client_by_dpt}
 \title{Customer by departement}
 \usage{
-client_by_dpt(x, priorite, age_class)
+client_by_dpt(x, priority, age_class)
 }
 \arguments{
 \item{x}{database}
 
-\item{priorite}{priorite}
+\item{priority}{priority}
 
 \item{age_class}{age_class}
 }

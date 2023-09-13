@@ -2,10 +2,10 @@
 % Please edit documentation in R/app_prod.R
 \name{app_prod}
 \alias{app_prod}
-\title{return \code{TRUE} if in \code{production mode}}
+\title{return \code{TRUE} if in \verb{production mode}}
 \usage{
 app_prod()
 }
 \description{
-return \code{TRUE} if in \code{production mode}
+return \code{TRUE} if in \verb{production mode}
 }

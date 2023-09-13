@@ -1,0 +1,123 @@
+/* theme */
+:root {
+    --main-bg: #36393A;
+    --main-title-col: #E8E3CB;
+    --nav-bg: #26727E;
+    --nav-color: #E8E3CB;
+    --box-bg: #E8E3CB;
+    --box-title-bg: #26727E;
+    --box-title-col: #E8E3CB;
+    --box-text-col: #26727E;
+    --border-col: #26727E;
+    --highlight-color: #813F09;
+    --theme-lightgrey: #d4d4d4;
+    --theme-darkgrey: #5c5c5c;
+}
+
+/* header */
+.skin-blue .main-header .navbar {
+    background-color: var(--nav-bg);
+    color: var(--nav-color);
+}
+.skin-blue .main-header .logo {
+    background-color: var(--nav-color);
+    color: var(--nav-bg);
+    border-bottom: 0 solid var(--nav-bg);
+}
+/* body */
+.content-wrapper, .right-side {
+    background-color: var(--main-bg);
+}
+body {
+    color: var(--box-text-col);
+}
+
+/* box */
+.box.box-solid.box-primary {
+    border: 1px solid var(--border-col);
+}
+.box {
+    background: var(--box-bg);
+}
+.box.box-solid.box-primary > .box-header {
+    color: var(--box-title-col);
+    background-color: var(--box-title-bg);
+}
+.box.box-warning {
+    border-top-color: var(--highlight-color);
+}
+
+/* sidebar */
+.skin-blue .left-side, .skin-blue .main-sidebar, .skin-blue .wrapper {
+    background-color: var(--main-bg);
+    border-right: solid 1px var(--border-col);
+    box-shadow: 0 10px 5px var(--border-col);
+}
+.skin-blue .sidebar-menu > li.active > a, .skin-blue .sidebar-menu > li:hover > a {
+    color: var(--box-bg);
+    background: #1e282c;
+    border-left-color: var(--nav-bg);
+}
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+    background-color: var(--highlight-color);
+}
+/* Tableau */
+.datatables {
+    color: var(--box-text-color);
+}
+.datatables tbody {
+    color: var(--box-text-color);
+}
+.datatables .dataTables_wrapper .dataTables_length,
+.datatables .dataTables_wrapper .dataTables_filter,
+.datatables .dataTables_wrapper .dataTables_info,
+.datatables .dataTables_wrapper .dataTables_processing,
+.datatables .dataTables_wrapper .dataTables_paginate .paginate_button,
+.datatables .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+  color: var(--box-text-color)!important;
+}
+
+
+/* Selectors */
+.irs-single,
+.irs-bar-edge,
+.irs-bar {
+  background: var(--highlight-color)!important;
+  border-top: 1px solid var(--highlight-color)!important;
+  border-bottom: 1px solid var(--highlight-color)!important;
+  color: black;
+}
+
+.irs-from,
+.irs-to,
+.irs-min,
+.irs-max {
+    background: var(--theme-lightgrey);
+}
+
+.filter-option {
+  background: var(--highlight-color)!important;
+  color: white;
+}
+.bootstrap-select > .dropdown-toggle.bs-placeholder,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:active,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
+    color: var(--box-text-col);
+}
+.selectize-dropdown {
+    color: var(--highlight-color);
+}
+.selectize-dropdown .active {
+    color: var(--box-bg);
+    background-color: var(--highlight-color);
+}
+.dropdown-menu a {
+    color: var(--box-text-col);
+}
+.dropdown-item.active,
+.dropdown-item:active {
+    color: var(--box-bg);
+    text-decoration: none;
+    background-color: var(--highlight-color);
+}
