@@ -81,6 +81,7 @@ usethis::use_github_action("pkgdown")
 
 # Deploy
 usethis::use_git_ignore("rsconnect")
+rsconnect::writeManifest()
 
 # Dev
 devtools::load_all()
