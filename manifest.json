@@ -548,35 +548,6 @@
         "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-10-13 15:36:29 UTC; unix"
       }
     },
-    "clipr": {
-      "Source": "CRAN",
-      "Repository": "https://packagemanager.rstudio.com/all/__linux__/jammy/latest",
-      "description": {
-        "Type": "Package",
-        "Package": "clipr",
-        "Title": "Read and Write from the System Clipboard",
-        "Version": "0.8.0",
-        "Authors@R": "c(\n    person(\"Matthew\", \"Lincoln\", , \"matthew.d.lincoln@gmail.com\", role = c(\"aut\", \"cre\"),\n           comment = c(ORCID = \"0000-0002-4387-3384\")),\n    person(\"Louis\", \"Maddox\", role = \"ctb\"),\n    person(\"Steve\", \"Simpson\", role = \"ctb\"),\n    person(\"Jennifer\", \"Bryan\", role = \"ctb\")\n  )",
-        "Description": "Simple utility functions to read from and write to\n    the Windows, OS X, and X11 clipboards.",
-        "License": "GPL-3",
-        "URL": "https://github.com/mdlincoln/clipr,\nhttp://matthewlincoln.net/clipr/",
-        "BugReports": "https://github.com/mdlincoln/clipr/issues",
-        "Imports": "utils",
-        "Suggests": "covr, knitr, rmarkdown, rstudioapi (>= 0.5), testthat (>=\n2.0.0)",
-        "VignetteBuilder": "knitr",
-        "Encoding": "UTF-8",
-        "Language": "en-US",
-        "RoxygenNote": "7.1.2",
-        "SystemRequirements": "xclip (https://github.com/astrand/xclip) or xsel\n(http://www.vergenet.net/~conrad/software/xsel/) for accessing\nthe X11 clipboard, or wl-clipboard\n(https://github.com/bugaevc/wl-clipboard) for systems using\nWayland.",
-        "NeedsCompilation": "no",
-        "Packaged": "2022-02-19 02:20:21 UTC; mlincoln",
-        "Author": "Matthew Lincoln [aut, cre] (<https://orcid.org/0000-0002-4387-3384>),\n  Louis Maddox [ctb],\n  Steve Simpson [ctb],\n  Jennifer Bryan [ctb]",
-        "Maintainer": "Matthew Lincoln <matthew.d.lincoln@gmail.com>",
-        "Repository": "CRAN",
-        "Date/Publication": "2022-02-22 00:58:45 UTC",
-        "Built": "R 4.2.1; ; 2022-10-04 16:01:18 UTC; unix"
-      }
-    },
     "colorspace": {
       "Source": "RSPM",
       "Repository": "https://packagemanager.rstudio.com/all/__linux__/jammy/latest",
@@ -713,35 +684,6 @@
         "Repository": "RSPM",
         "Date/Publication": "2022-09-29 16:20:24 UTC",
         "Built": "R 4.2.0; ; 2022-09-30 11:29:44 UTC; unix"
-      }
-    },
-    "credentials": {
-      "Source": "CRAN",
-      "Repository": "https://packagemanager.rstudio.com/all/__linux__/jammy/latest",
-      "description": {
-        "Package": "credentials",
-        "Type": "Package",
-        "Title": "Tools for Managing SSH and Git Credentials",
-        "Version": "1.3.2",
-        "Authors@R": "person(\"Jeroen\", \"Ooms\", role = c(\"aut\", \"cre\"), \n    email = \"jeroen@berkeley.edu\", comment = c(ORCID = \"0000-0002-4035-0289\"))",
-        "Description": "Setup and retrieve HTTPS and SSH credentials for use with 'git' and \n    other services. For HTTPS remotes the package interfaces the 'git-credential' \n    utility which 'git' uses to store HTTP usernames and passwords. For SSH \n    remotes we provide convenient functions to find or generate appropriate SSH \n    keys. The package both helps the user to setup a local git installation, and\n    also provides a back-end for git/ssh client libraries to authenticate with \n    existing user credentials.",
-        "License": "MIT + file LICENSE",
-        "SystemRequirements": "git (optional)",
-        "Encoding": "UTF-8",
-        "Imports": "openssl (>= 1.3), sys (>= 2.1), curl, jsonlite, askpass",
-        "Suggests": "testthat, knitr, rmarkdown",
-        "RoxygenNote": "7.1.1",
-        "VignetteBuilder": "knitr",
-        "Language": "en-US",
-        "URL": "https://docs.ropensci.org/credentials/ (website)\nhttps://github.com/r-lib/credentials",
-        "BugReports": "https://github.com/r-lib/credentials/issues",
-        "NeedsCompilation": "no",
-        "Packaged": "2021-11-29 11:40:26 UTC; jeroen",
-        "Author": "Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>)",
-        "Maintainer": "Jeroen Ooms <jeroen@berkeley.edu>",
-        "Repository": "CRAN",
-        "Date/Publication": "2021-11-29 12:40:01 UTC",
-        "Built": "R 4.2.1; ; 2022-10-04 15:10:43 UTC; unix"
       }
     },
     "crosstalk": {
@@ -1273,35 +1215,6 @@
         "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 14:47:29 UTC; unix"
       }
     },
-    "gert": {
-      "Source": "RSPM",
-      "Repository": "https://packagemanager.rstudio.com/all/__linux__/jammy/latest",
-      "description": {
-        "Type": "Package",
-        "Package": "gert",
-        "Title": "Simple Git Client for R",
-        "Version": "1.9.2",
-        "Authors@R": "c(\n    person(\"Jeroen\", \"Ooms\", role = c(\"aut\", \"cre\"), email = \"jeroen@berkeley.edu\",\n      comment = c(ORCID = \"0000-0002-4035-0289\")),\n    person(\"Jennifer\", \"Bryan\", role = \"ctb\", email = \"jenny@rstudio.com\",\n      comment = c(ORCID = \"0000-0002-6983-2759\")))",
-        "Description": "Simple git client for R based on 'libgit2' <https://libgit2.org> with\n    support for SSH and HTTPS remotes. All functions in 'gert' use basic R data \n    types (such as vectors and data-frames) for their arguments and return values.\n    User credentials are shared with command line 'git' through the git-credential\n    store and ssh keys stored on disk or ssh-agent.",
-        "License": "MIT + file LICENSE",
-        "URL": "https://docs.ropensci.org/gert/, https://github.com/r-lib/gert",
-        "BugReports": "https://github.com/r-lib/gert/issues",
-        "Imports": "askpass, credentials (>= 1.2.1), openssl (>= 2.0.3),\nrstudioapi (>= 0.11), sys, zip (>= 2.1.0)",
-        "Suggests": "spelling, knitr, rmarkdown, testthat",
-        "VignetteBuilder": "knitr",
-        "Encoding": "UTF-8",
-        "RoxygenNote": "7.2.1",
-        "SystemRequirements": "libgit2 (>= 1.0): libgit2-devel (rpm) or\nlibgit2-dev (deb)",
-        "Language": "en-US",
-        "NeedsCompilation": "yes",
-        "Packaged": "2022-12-05 23:16:35 UTC; jeroen",
-        "Author": "Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\n  Jennifer Bryan [ctb] (<https://orcid.org/0000-0002-6983-2759>)",
-        "Maintainer": "Jeroen Ooms <jeroen@berkeley.edu>",
-        "Repository": "RSPM",
-        "Date/Publication": "2022-12-05 23:50:02 UTC",
-        "Built": "R 4.2.0; x86_64-pc-linux-gnu; 2022-12-06 16:43:20 UTC; unix"
-      }
-    },
     "ggplot2": {
       "Source": "RSPM",
       "Repository": "https://packagemanager.rstudio.com/all/__linux__/jammy/latest",
@@ -1332,65 +1245,6 @@
         "Repository": "RSPM",
         "Date/Publication": "2022-11-04 15:20:09 UTC",
         "Built": "R 4.2.0; ; 2022-11-07 13:20:49 UTC; unix"
-      }
-    },
-    "gh": {
-      "Source": "CRAN",
-      "Repository": "https://packagemanager.rstudio.com/all/__linux__/jammy/latest",
-      "description": {
-        "Package": "gh",
-        "Title": "'GitHub' 'API'",
-        "Version": "1.3.1",
-        "Authors@R": "c(\n    person(\"Gábor\", \"Csárdi\", , \"csardi.gabor@gmail.com\", role = c(\"cre\", \"ctb\")),\n    person(\"Jennifer\", \"Bryan\", role = \"aut\"),\n    person(\"Hadley\", \"Wickham\", role = \"aut\"),\n    person(\"RStudio\", role = c(\"cph\", \"fnd\"))\n  )",
-        "Description": "Minimal client to access the 'GitHub' 'API'.",
-        "License": "MIT + file LICENSE",
-        "URL": "https://gh.r-lib.org/, https://github.com/r-lib/gh#readme",
-        "BugReports": "https://github.com/r-lib/gh/issues",
-        "Depends": "R (>= 3.4)",
-        "Imports": "cli (>= 3.0.1), gitcreds, httr (>= 1.2), ini, jsonlite",
-        "Suggests": "covr, knitr, mockery, rmarkdown, rprojroot, spelling,\ntestthat (>= 3.0.0), withr",
-        "VignetteBuilder": "knitr",
-        "Encoding": "UTF-8",
-        "Language": "en-US",
-        "RoxygenNote": "7.2.1.9000",
-        "Config/testthat/edition": "3",
-        "Config/Needs/website": "tidyverse/tidytemplate",
-        "NeedsCompilation": "no",
-        "Packaged": "2022-09-08 11:17:00 UTC; gaborcsardi",
-        "Author": "Gábor Csárdi [cre, ctb],\n  Jennifer Bryan [aut],\n  Hadley Wickham [aut],\n  RStudio [cph, fnd]",
-        "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
-        "Repository": "CRAN",
-        "Date/Publication": "2022-09-08 11:42:55 UTC",
-        "Built": "R 4.2.1; ; 2022-09-08 13:40:49 UTC; unix"
-      }
-    },
-    "gitcreds": {
-      "Source": "CRAN",
-      "Repository": "https://packagemanager.rstudio.com/all/__linux__/jammy/latest",
-      "description": {
-        "Package": "gitcreds",
-        "Title": "Query 'git' Credentials from 'R'",
-        "Version": "0.1.2",
-        "Authors@R": "c(\n    person(\"Gábor\", \"Csárdi\", , \"csardi.gabor@gmail.com\", role = c(\"aut\", \"cre\")),\n    person(\"RStudio\", role = c(\"cph\", \"fnd\"))\n  )",
-        "Description": "Query, set, delete credentials from the 'git' credential\n    store. Manage 'GitHub' tokens and other 'git' credentials. This\n    package is to be used by other packages that need to authenticate to\n    'GitHub' and/or other 'git' repositories.",
-        "License": "MIT + file LICENSE",
-        "URL": "https://gitcreds.r-lib.org/, https://github.com/r-lib/gitcreds",
-        "BugReports": "https://github.com/r-lib/gitcreds/issues",
-        "Depends": "R (>= 3.4)",
-        "Suggests": "codetools, covr, knitr, mockery, oskeyring, rmarkdown,\ntestthat (>= 3.0.0), withr",
-        "VignetteBuilder": "knitr",
-        "Config/Needs/website": "tidyverse/tidytemplate",
-        "Encoding": "UTF-8",
-        "RoxygenNote": "7.2.1.9000",
-        "SystemRequirements": "git",
-        "Config/testthat/edition": "3",
-        "NeedsCompilation": "no",
-        "Packaged": "2022-09-08 10:28:07 UTC; gaborcsardi",
-        "Author": "Gábor Csárdi [aut, cre],\n  RStudio [cph, fnd]",
-        "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
-        "Repository": "CRAN",
-        "Date/Publication": "2022-09-08 10:42:55 UTC",
-        "Built": "R 4.2.1; ; 2022-09-08 13:38:11 UTC; unix"
       }
     },
     "glue": {
@@ -1429,30 +1283,27 @@
       "description": {
         "Package": "golem",
         "Title": "A Framework for Robust Shiny Applications",
-        "Authors@R": "\n    c(person(given = \"Colin\",\n             family = \"Fay\",\n             role = c(\"cre\", \"aut\"),\n             email = \"contact@colinfay.me\",\n             comment = c(ORCID = \"0000-0001-7343-1846\")),\n      person(given = \"Vincent\",\n             family = \"Guyader\",\n             role = \"aut\",\n             email = \"vincent@thinkr.fr\",\n             comment = c(ORCID = \"0000-0003-0671-9270\", \"previous maintainer\")),\n      person(given = \"Sébastien\",\n             family = \"Rochette\",\n             role = \"aut\",\n             email = \"sebastien@thinkr.fr\",\n             comment = c(ORCID = \"0000-0002-1565-9313\")),\n      person(given = \"Cervan\",\n             family = \"Girard\",\n             role = \"aut\",\n             email = \"cervan@thinkr.fr\",\n             comment = c(ORCID = \"0000-0002-4816-4624\")),\n      person(given = \"Novica\",\n             family = \"Nakov\",\n             role = \"ctb\",\n             email = \"nnovica@gmail.com\"),\n      person(given = \"David\",\n             family = \"Granjon\",\n             role = \"ctb\",\n             email = \"dgranjon@ymail.com\"),\n      person(given = \"Arthur\",\n             family = \"Bréant\",\n             role = \"ctb\",\n             email = \"arthur@thinkr.fr\"),\n      person(given = \"Antoine\",\n             family = \"Languillaume\",\n             role = \"ctb\",\n             email = \"antoine@thinkr.fr\"),                    \n      person(given = \"ThinkR\",\n             role = \"cph\"))",
+        "Version": "0.4.1",
+        "Authors@R": "c(\n    person(\"Colin\", \"Fay\", , \"contact@colinfay.me\", role = c(\"cre\", \"aut\"),\n           comment = c(ORCID = \"0000-0001-7343-1846\")),\n    person(\"Vincent\", \"Guyader\", , \"vincent@thinkr.fr\", role = \"aut\",\n           comment = c(ORCID = \"0000-0003-0671-9270\", \"previous maintainer\")),\n    person(\"Sébastien\", \"Rochette\", , \"sebastien@thinkr.fr\", role = \"aut\",\n           comment = c(ORCID = \"0000-0002-1565-9313\")),\n    person(\"Cervan\", \"Girard\", , \"cervan@thinkr.fr\", role = \"aut\",\n           comment = c(ORCID = \"0000-0002-4816-4624\")),\n    person(\"Novica\", \"Nakov\", , \"nnovica@gmail.com\", role = \"ctb\"),\n    person(\"David\", \"Granjon\", , \"dgranjon@ymail.com\", role = \"ctb\"),\n    person(\"Arthur\", \"Bréant\", , \"arthur@thinkr.fr\", role = \"ctb\"),\n    person(\"Antoine\", \"Languillaume\", , \"antoine@thinkr.fr\", role = \"ctb\"),\n    person(\"ThinkR\", role = \"cph\")\n  )",
         "Description": "An opinionated framework for building a production-ready\n    'Shiny' application. This package contains a series of tools for\n    building a robust 'Shiny' application from start to finish.",
         "License": "MIT + file LICENSE",
         "URL": "https://github.com/ThinkR-open/golem",
         "BugReports": "https://github.com/ThinkR-open/golem/issues",
         "Depends": "R (>= 3.0)",
-        "Imports": "attempt (>= 0.3.0), cli (>= 2.0.0), config, crayon, desc,\nhere, fs, htmltools, rlang (>= 1.0.0), rstudioapi, shiny (>=\n1.5.0), usethis (>= 1.6.0), utils, yaml",
-        "Suggests": "covr, devtools, dockerfiler (>= 0.2.0), knitr, pkgload,\npkgbuild, pkgdown, processx, purrr, rcmdcheck, roxygen2,\nrmarkdown, rsconnect, spelling, stringr, testthat, tools,\nwithr, attachment (>= 0.2.5), renv",
+        "Imports": "attempt (>= 0.3.0), config, here, htmltools, rlang (>= 1.0.0),\nshiny (>= 1.5.0), utils, yaml",
+        "Suggests": "covr, cli (>= 2.0.0), crayon, devtools, dockerfiler (>=\n0.2.0), knitr, pkgload, pkgbuild, pkgdown, processx, purrr,\nrcmdcheck, roxygen2, rmarkdown, rsconnect, spelling, stringr,\ntestthat, tools, withr, attachment (>= 0.2.5), renv, usethis\n(>= 1.6.0), fs, rstudioapi, desc",
         "VignetteBuilder": "knitr",
         "Config/testthat/edition": "3",
         "Encoding": "UTF-8",
         "Language": "en-US",
-        "Roxygen": "list(markdown = TRUE)",
-        "RoxygenNote": "7.2.1",
-        "Repository": "RSPM",
-        "RemoteSha": "7a9debb1fab42368ee3b50803483416180508c6f",
-        "Version": "0.3.5.9001.0.0.0.1670517568",
-        "Date": "2022-12-08",
-        "Date/Publication": "2022-12-08 16:39:28 UTC",
+        "RoxygenNote": "7.2.3",
         "NeedsCompilation": "no",
-        "Packaged": "2022-12-20 13:57:26 UTC; root",
+        "Packaged": "2023-06-05 15:00:10 UTC; colinfay",
         "Author": "Colin Fay [cre, aut] (<https://orcid.org/0000-0001-7343-1846>),\n  Vincent Guyader [aut] (<https://orcid.org/0000-0003-0671-9270>,\n    previous maintainer),\n  Sébastien Rochette [aut] (<https://orcid.org/0000-0002-1565-9313>),\n  Cervan Girard [aut] (<https://orcid.org/0000-0002-4816-4624>),\n  Novica Nakov [ctb],\n  David Granjon [ctb],\n  Arthur Bréant [ctb],\n  Antoine Languillaume [ctb],\n  ThinkR [cph]",
         "Maintainer": "Colin Fay <contact@colinfay.me>",
-        "Built": "R 4.2.1; ; 2022-12-20 16:03:19 UTC; unix"
+        "Repository": "RSPM",
+        "Date/Publication": "2023-06-05 15:50:03 UTC",
+        "Built": "R 4.2.0; ; 2023-06-06 11:30:21 UTC; unix"
       }
     },
     "gridExtra": {
@@ -1677,31 +1528,6 @@
         "Repository": "RSPM",
         "Date/Publication": "2022-08-17 13:00:04 UTC",
         "Built": "R 4.2.0; ; 2022-08-18 11:29:47 UTC; unix"
-      }
-    },
-    "ini": {
-      "Source": "CRAN",
-      "Repository": "https://packagemanager.rstudio.com/all/__linux__/jammy/latest",
-      "description": {
-        "Package": "ini",
-        "Type": "Package",
-        "Title": "Read and Write '.ini' Files",
-        "Version": "0.3.1",
-        "Date": "2018-05-19",
-        "Author": "David Valentim Dias",
-        "Maintainer": "David Valentim Dias <dvdscripter@gmail.com>",
-        "Description": "Parse simple '.ini' configuration files to an structured list. Users\n  can manipulate this resulting list with lapply() functions. This same\n  structured list can be used to write back to file after modifications.",
-        "License": "GPL-3",
-        "URL": "https://github.com/dvdscripter/ini",
-        "BugReports": "https://github.com/dvdscripter/ini/issues",
-        "LazyData": "FALSE",
-        "RoxygenNote": "6.0.1",
-        "Suggests": "testthat",
-        "NeedsCompilation": "no",
-        "Packaged": "2018-05-19 23:19:45 UTC; CLIENTE",
-        "Repository": "CRAN",
-        "Date/Publication": "2018-05-20 03:26:39 UTC",
-        "Built": "R 4.2.1; ; 2022-10-04 16:01:14 UTC; unix"
       }
     },
     "isoband": {
@@ -2828,31 +2654,6 @@
         "Built": "R 4.2.0; ; 2022-05-06 22:59:18 UTC; unix"
       }
     },
-    "rstudioapi": {
-      "Source": "CRAN",
-      "Repository": "https://packagemanager.rstudio.com/all/__linux__/jammy/latest",
-      "description": {
-        "Package": "rstudioapi",
-        "Title": "Safely Access the RStudio API",
-        "Description": "Access the RStudio API (if available) and provide informative error\n    messages when it's not.",
-        "Version": "0.14",
-        "Authors@R": "c(\n    person(\"Kevin\", \"Ushey\", role = c(\"aut\", \"cre\"), email = \"kevin@rstudio.com\"),\n    person(\"JJ\", \"Allaire\", role = c(\"aut\"), email = \"jj@rstudio.com\"),\n    person(\"Hadley\", \"Wickham\", role = c(\"aut\"), email = \"hadley@rstudio.com\"),\n    person(\"Gary\", \"Ritchie\", role = c(\"aut\"), email = \"gary@rstudio.com\"),\n    person(family = \"RStudio\", role = \"cph\")\n    )",
-        "Maintainer": "Kevin Ushey <kevin@rstudio.com>",
-        "License": "MIT + file LICENSE",
-        "URL": "https://rstudio.github.io/rstudioapi/,\nhttps://github.com/rstudio/rstudioapi",
-        "BugReports": "https://github.com/rstudio/rstudioapi/issues",
-        "RoxygenNote": "7.2.1.9000",
-        "Suggests": "testthat, knitr, rmarkdown, clipr, covr",
-        "VignetteBuilder": "knitr",
-        "Encoding": "UTF-8",
-        "NeedsCompilation": "no",
-        "Packaged": "2022-08-22 18:55:08 UTC; kevin",
-        "Author": "Kevin Ushey [aut, cre],\n  JJ Allaire [aut],\n  Hadley Wickham [aut],\n  Gary Ritchie [aut],\n  RStudio [cph]",
-        "Repository": "CRAN",
-        "Date/Publication": "2022-08-22 22:00:03 UTC",
-        "Built": "R 4.2.1; ; 2022-10-04 15:24:28 UTC; unix"
-      }
-    },
     "s2": {
       "Source": "RSPM",
       "Repository": "https://packagemanager.rstudio.com/all/__linux__/jammy/latest",
@@ -3494,35 +3295,6 @@
         "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 14:52:28 UTC; unix"
       }
     },
-    "usethis": {
-      "Source": "CRAN",
-      "Repository": "https://packagemanager.rstudio.com/all/__linux__/jammy/latest",
-      "description": {
-        "Package": "usethis",
-        "Title": "Automate Package and Project Setup",
-        "Version": "2.2.0",
-        "Authors@R": "c(\n    person(\"Hadley\", \"Wickham\", , \"hadley@posit.co\", role = \"aut\",\n           comment = c(ORCID = \"0000-0003-4757-117X\")),\n    person(\"Jennifer\", \"Bryan\", , \"jenny@posit.co\", role = c(\"aut\", \"cre\"),\n           comment = c(ORCID = \"0000-0002-6983-2759\")),\n    person(\"Malcolm\", \"Barrett\", , \"malcolmbarrett@gmail.com\", role = \"aut\",\n           comment = c(ORCID = \"0000-0003-0299-5825\")),\n    person(\"Andy\", \"Teucher\", , \"andy.teucher@posit.co\", role = \"aut\",\n           comment = c(ORCID = \"0000-0002-7840-692X\")),\n    person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"))\n  )",
-        "Description": "Automate package and project setup tasks that are otherwise\n    performed manually. This includes setting up unit testing, test\n    coverage, continuous integration, Git, 'GitHub', licenses, 'Rcpp',\n    'RStudio' projects, and more.",
-        "License": "MIT + file LICENSE",
-        "URL": "https://usethis.r-lib.org, https://github.com/r-lib/usethis",
-        "BugReports": "https://github.com/r-lib/usethis/issues",
-        "Depends": "R (>= 3.6)",
-        "Imports": "cli (>= 3.0.1), clipr (>= 0.3.0), crayon, curl (>= 2.7), desc\n(>= 1.4.2), fs (>= 1.3.0), gert (>= 1.4.1), gh (>= 1.2.1), glue\n(>= 1.3.0), jsonlite, lifecycle (>= 1.0.0), purrr, rappdirs,\nrlang (>= 1.1.0), rprojroot (>= 1.2), rstudioapi, stats, utils,\nwhisker, withr (>= 2.3.0), yaml",
-        "Suggests": "covr, knitr, magick, pkgload, rmarkdown, roxygen2 (>= 7.1.2),\nspelling (>= 1.2), styler (>= 1.2.0), testthat (>= 3.1.8)",
-        "Config/Needs/website": "tidyverse/tidytemplate, xml2",
-        "Config/testthat/edition": "3",
-        "Encoding": "UTF-8",
-        "Language": "en-US",
-        "RoxygenNote": "7.2.3",
-        "NeedsCompilation": "no",
-        "Packaged": "2023-06-06 03:32:51 UTC; jenny",
-        "Author": "Hadley Wickham [aut] (<https://orcid.org/0000-0003-4757-117X>),\n  Jennifer Bryan [aut, cre] (<https://orcid.org/0000-0002-6983-2759>),\n  Malcolm Barrett [aut] (<https://orcid.org/0000-0003-0299-5825>),\n  Andy Teucher [aut] (<https://orcid.org/0000-0002-7840-692X>),\n  Posit Software, PBC [cph, fnd]",
-        "Maintainer": "Jennifer Bryan <jenny@posit.co>",
-        "Repository": "CRAN",
-        "Date/Publication": "2023-06-06 09:30:02 UTC",
-        "Built": "R 4.2.1; ; 2023-06-07 09:43:28 UTC; unix"
-      }
-    },
     "utf8": {
       "Source": "RSPM",
       "Repository": "https://packagemanager.rstudio.com/all/__linux__/jammy/latest",
@@ -3660,30 +3432,6 @@
         "Repository": "RSPM",
         "Date/Publication": "2022-03-16 22:20:04 UTC",
         "Built": "R 4.2.0; ; 2022-05-06 23:00:31 UTC; unix"
-      }
-    },
-    "whisker": {
-      "Source": "RSPM",
-      "Repository": "https://packagemanager.rstudio.com/all/__linux__/jammy/latest",
-      "description": {
-        "Package": "whisker",
-        "Maintainer": "Edwin de Jonge <edwindjonge@gmail.com>",
-        "License": "GPL-3",
-        "Title": "{{mustache}} for R, Logicless Templating",
-        "Type": "Package",
-        "LazyLoad": "yes",
-        "Author": "Edwin de Jonge",
-        "Description": "Implements 'Mustache' logicless templating.",
-        "Version": "0.4.1",
-        "URL": "https://github.com/edwindj/whisker",
-        "Suggests": "markdown",
-        "RoxygenNote": "6.1.1",
-        "NeedsCompilation": "no",
-        "Packaged": "2022-12-05 15:15:55 UTC; hornik",
-        "Repository": "RSPM",
-        "Date/Publication": "2022-12-05 15:33:50 UTC",
-        "Encoding": "UTF-8",
-        "Built": "R 4.2.0; ; 2022-12-06 16:42:53 UTC; unix"
       }
     },
     "widgetframe": {
@@ -3846,30 +3594,6 @@
         "Repository": "CRAN",
         "Date/Publication": "2022-10-18 08:30:02 UTC",
         "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-10-19 19:27:13 UTC; unix"
-      }
-    },
-    "zip": {
-      "Source": "RSPM",
-      "Repository": "https://packagemanager.rstudio.com/all/__linux__/jammy/latest",
-      "description": {
-        "Package": "zip",
-        "Title": "Cross-Platform 'zip' Compression",
-        "Version": "2.2.2",
-        "Author": "Gábor Csárdi, Kuba Podgórski, Rich Geldreich",
-        "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
-        "Description": "Cross-Platform 'zip' Compression Library. A replacement\n    for the 'zip' function, that does not require any additional\n    external tools on any platform.",
-        "License": "MIT + file LICENSE",
-        "URL": "https://github.com/r-lib/zip#readme",
-        "BugReports": "https://github.com/r-lib/zip/issues",
-        "RoxygenNote": "7.2.1.9000",
-        "Config/testthat/edition": "3",
-        "Suggests": "covr, processx, R6, testthat, withr",
-        "Encoding": "UTF-8",
-        "NeedsCompilation": "yes",
-        "Packaged": "2022-10-25 13:31:24 UTC; gaborcsardi",
-        "Repository": "RSPM",
-        "Date/Publication": "2022-10-26 10:50:02 UTC",
-        "Built": "R 4.2.0; x86_64-pc-linux-gnu; 2022-10-27 11:12:17 UTC; unix"
       }
     }
   },
